@@ -1,21 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Nova+Square&family=Roboto:wght@300&display=swap");
+
 * {
   box-sizing: border-box;
 }
 
 :root {
-  --primary-color: #22245b;
-  --secondary-color: #373b69;
+  --primary-color: #483434;
+  --secondary-color: #6b4f4f;
 }
 
 body {
   background-color: var(--primary-color);
   margin: 0;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  overflow: hidden; */
+  font-family: "Roboto", sans-serif;
 }
 
 header {
@@ -100,8 +97,10 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #fff;
+  background-color: var(--primary-color);
   padding: 1rem;
+  color: #fff;
+  border-radius: 20px;
   max-height: 100%;
   transform: translateY(101%);
   transition: transform 0.3s ease-in;

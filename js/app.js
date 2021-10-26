@@ -57,5 +57,7 @@ form.addEventListener("submit", (e) => {
   const searchTerm = search.value;
   if (searchTerm) {
     getMovie(searchURL + "&query=" + searchTerm);
+  } else {
+    getMovie(API_URL);
   }
 });
