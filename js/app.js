@@ -127,11 +127,30 @@ function Selection() {
   tags.forEach((tag) => {
     tag.classList.remove("highling");
   });
+  clearBtn();
   if (selectedGenre.length != 0) {
     selectedGenre.forEach((id) => {
       const SelectTag = document.getElementById(id);
       SelectTag.classList.add("highling");
     });
+  }
+}
+
+function clearBtn() {
+  let clearBtn = document.getElementById("clear");
+  if (clearBtn) {
+    clearBtn.classList.add("highling");
+  } else {
+    let clear = document.createElement("div");
+    clear.classList.add("tag", "highling");
+    clear.id = "clear";
+    clear.innerText = "Clear all";
+    clear.addEventListener("click", () => {
+      selectedGenre = [];
+      setGenere();
+      getMovie(API_URL);
+    });
+    tagsEl.append(clear);
   }
 }
 
@@ -190,6 +209,8 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const searchTerm = search.value;
+  selectedGenre = [];
+  setGenere();
   if (searchTerm) {
     getMovie(searchURL + "&query=" + searchTerm);
   } else {
