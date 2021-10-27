@@ -109,3 +109,31 @@ header {
 .movie:hover .overview {
   transform: translateY(0);
 }
+
+/* Estilos a las tags */
+#tags {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.tag {
+  color: #fff;
+  padding: 10px 20px;
+  background-color: orange;
+  border-radius: 50px;
+  margin: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tag.highling {
+  background-color: red;
+}
+
+.no-result {
+  color: #fff;
+}
